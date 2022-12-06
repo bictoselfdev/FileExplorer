@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         if (permissionCheck()) {
 
-            initTreeView()
+            initFileExplorer()
         }
 
         binding.btnExpandAll.setOnClickListener {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initTreeView() {
+    private fun initFileExplorer() {
 
         val download = File("/sdcard/Download")
         getTreeNode(download)?.let { nodes.add(it) }
@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity() {
 
         if (resultCode == RESULT_OK) {
             when (requestCode) {
-                100 -> initTreeView()
+                100 -> initFileExplorer()
             }
         }
     }
